@@ -37,7 +37,7 @@ function dt_get_dolar_today_info() {
     $body = utf8_encode ( wp_remote_retrieve_body($response) );
 
 
-    set_transient( 'dt_dolar_today_transient', $body, 1 );
+    set_transient( 'dt_dolar_today_transient', $body, 60*60*4 );
 
     // Decoding JSON string
     return json_decode($body); 
