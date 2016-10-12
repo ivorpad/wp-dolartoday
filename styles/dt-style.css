@@ -1,0 +1,27 @@
+code {
+    color: red;
+}
+
+hr {
+  
+  margin: 0;
+}
+
+.dolartoday-display {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.dolartoday-display.usd {
+  padding-top: 0;
+}
+
+.dolartoday-date {
+  margin-top: 20px;
+
+  font-size: 80%;
+}
+
+small.info {
+  font-size: 60%;
+}
