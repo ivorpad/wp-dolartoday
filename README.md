@@ -20,7 +20,11 @@ Go to `Appearance / Widgets` and drag your Widget to any Widgetized Sidebar.
 
 ### Preview:
 
-<img width="303" alt="screen shot 2016-10-12 at 18 28 31" src="https://cloud.githubusercontent.com/assets/52452/19330014/c651e288-90a9-11e6-8056-fdc154eadb0e.png">
+<img width="304" alt="screen shot 2016-10-13 at 00 26 48" src="https://cloud.githubusercontent.com/assets/52452/19336727/c971a714-90db-11e6-88b5-69a2052f0a46.png">
+
+## Changelog
+
+* Added Bitcoin prices.
 
 ## License
 
