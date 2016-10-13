@@ -29,8 +29,9 @@ class Dolar_Today extends WP_Widget {
     if ( ! empty( $instance['title'] ) ) {
       echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
     }
-    $dolartoday = dt_get_dolar_today_info();
+
      include plugin_dir_path(__FILE__) . 'templates/info-display.php';
+
      echo $args['after_widget'];
 
   }

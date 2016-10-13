@@ -16,37 +16,32 @@ License: GPL2
 if ( !defined('ABSPATH') )
     die('-1');
 
-function dt_get_dolar_today_info() {
 
-     // If transient is not set then get transient
-    $cached = get_transient('dt_dolar_today_transient');
+function dt_get_api_response($url, $transient) {
+    $cached = get_transient($transient);
     if( false !== $cached ) {
         return json_decode($cached);
     }
 
-    // API URL
-    $response = wp_remote_get( 'https://s3.amazonaws.com/dolartoday/data.json' );
-    
-     // If the API is down display an error.
+    $response = wp_remote_get($url);
+
     if( is_wp_error( $response ) ) {
-        return "The DolarToday API is having issues, please try again later.";
+        return "The API is having issues, please try again later.";
     }
 
-    // DolarToday's API uses tilde so we must encode to utf8
+    // If the API uses tilde we must encode to utf8
     // and retrieve body $response.
     $body = utf8_encode ( wp_remote_retrieve_body($response) );
 
 
-    set_transient( 'dt_dolar_today_transient', $body, 60*60*4 );
+    set_transient( $transient, $body, 60*60*4 );
 
     // Decoding JSON string
     return json_decode($body); 
-   
 }
 
-
 function dt_display_dolar_today() {   
-    $dolartoday = dt_get_dolar_today_info();
+    $dolartoday = dt_get_api_response('https://s3.amazonaws.com/dolartoday/data.json', 'dt_dolar_today_transient');
     echo "<div class='dolar_today_shortcode'>";
     include plugin_dir_path(__FILE__) . 'templates/info-display.php';
     echo "</div>";
