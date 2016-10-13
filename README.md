@@ -10,7 +10,7 @@ Just place the shortcode `[dolartoday]` in any Post Type.
 
 ### Preview:
 
-<img width="603" alt="screen shot 2016-10-12 at 18 28 10" src="https://cloud.githubusercontent.com/assets/52452/19330015/c83b78ca-90a9-11e6-8454-430cfc81a951.png">
+<img width="602" alt="screen shot 2016-10-13 at 00 29 31" src="https://cloud.githubusercontent.com/assets/52452/19336772/33f9d9f8-90dc-11e6-8b9f-45ed003a71f5.png">
 
 ## Widget
 
