@@ -15,32 +15,32 @@ $avg_eur = ($dolartoday->EUR->transferencia + $dolartoday->EUR->efectivo_cucuta)
  <div class="dolartoday-display usd">
 
  <?php
-echo '<b>' . ucfirst(strtolower($dolartoday->_labels->a)) . '</b>: ' . round($dolartoday->USD->transferencia) . ' BsF <br />';
-echo '<b>' . ucfirst(strtolower($dolartoday->_labels->a1)) . '</b>: ' . round($dolartoday->USD->efectivo_cucuta) . ' BsF <br />';
-echo '<b>' . 'USD Paralelo Promedio</b>: ' . round($avg_usd) . ' BsF<br />';
+echo '<b>' . ucfirst( strtolower(esc_html( $dolartoday->_labels->a )) ) . '</b>: ' . round(esc_html($dolartoday->USD->transferencia)) . ' BsF <br />';
+echo '<b>' . ucfirst( esc_html(strtolower( $dolartoday->_labels->a1 )) ) . '</b>: ' . round( esc_html($dolartoday->USD->efectivo_cucuta) ) . ' BsF <br />';
+echo '<b>' . 'USD Paralelo Promedio</b>: ' . round(esc_html( $avg_usd )) . ' BsF<br />';
 ?>
  </div>
 <div class="dolartoday-display eur"> 
 <h4> (€) EUR </h4>
 <?php
-echo '<b>' . "Transferencia</b>:  " . ' ' . round($dolartoday->EUR->transferencia) . ' BsF <br />';
-echo '<b>' . "Cucuta (transfer)</b>: " . ' ' . round($dolartoday->EUR->efectivo_cucuta) . ' BsF <br />';
-echo '<b>' . 'EUR Paralelo Promedio</b>: ' . round($avg_eur) . ' BsF<br />';
+echo '<b>' . "Transferencia</b>:  " . ' ' . round( esc_html( $dolartoday->EUR->transferencia ) ) . ' BsF <br />';
+echo '<b>' . "Cucuta (transfer)</b>: " . ' ' . round(esc_html( $dolartoday->EUR->efectivo_cucuta )) . ' BsF <br />';
+echo '<b>' . 'EUR Paralelo Promedio</b>: ' . round(esc_html( $avg_eur )) . ' BsF<br />';
 ?>
  </div>
 
 <div class="dolartoday-display btc"> 
 <h4> (฿) BTC </h4>
 <?php
-echo '<b>' . "Bitcoin (USD)</b>:  " . ' ' . '$' . $bitcoin->last . ' <br />';
-echo '<b>' . "Bitcoin (BsF)</b>: " . ' ' . round($bitcoin->last * $dolartoday->USD->transferencia) . ' BsF <br />';
+echo '<b>' . "Bitcoin (USD)</b>:  " . ' ' . '$' . esc_html( $bitcoin->last ) . ' <br />';
+echo '<b>' . "Bitcoin (BsF)</b>: " . ' ' . round(esc_html( $bitcoin->last * $dolartoday->USD->transferencia ) ) . ' BsF <br />';
 ?>
  </div>
 
 
 <div class="dolartoday-date">
   <?php
-echo "Date: " . $dolartoday->_timestamp->fecha_corta; ?>
+echo "Date: " . esc_html( $dolartoday->_timestamp->fecha_corta ); ?>
 </div>
 
 <small class="info">(Source: DolarToday / Bitstamp)</small>
